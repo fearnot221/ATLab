@@ -1,3 +1,20 @@
+(() => {
+  /* mobile menu: full-screen list under the header */
+  const b = document.getElementById('mbtn'), m = document.getElementById('mnav');
+  if (!b || !m) return;
+  const set = open => {
+    b.setAttribute('aria-expanded', open);
+    b.setAttribute('aria-label', open ? '關閉選單' : '開啟選單');
+    document.documentElement.classList.toggle('menu-open', open);
+    if (open) { m.hidden = false; requestAnimationFrame(() => m.classList.add('on')); }
+    else { m.classList.remove('on'); m.hidden = true; }
+  };
+  b.addEventListener('click', () => set(b.getAttribute('aria-expanded') !== 'true'));
+  m.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !m.hidden) { set(false); b.focus(); } });
+  matchMedia('(min-width: 1001px)').addEventListener('change', e => e.matches && set(false));
+})();
+
 /* Shared motion for the team pages. Content is fully visible without it. */
 (() => {
   const root = document.documentElement;
