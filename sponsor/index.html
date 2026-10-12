@@ -780,6 +780,17 @@ a{color:inherit}
 
 <script>
 (() => {
+  /* a fresh visit always starts at the top (some embedded viewers carry the old scroll over);
+     links to a #section and back/forward navigation keep their position */
+  const nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  if (location.hash || (nav && nav.type !== 'navigate')) return;
+  let touched = false;
+  ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach(ev => addEventListener(ev, () => { touched = true; }, { once: true, passive: true }));
+  const top = () => { if (!touched) scrollTo(0, 0); };
+  top();
+  addEventListener('load', () => { top(); setTimeout(top, 80); setTimeout(top, 300); });
+})();
+(() => {
   /* 技術組 dropdown: click to open, closes on outside click, Esc or leaving it */
   document.querySelectorAll('.dd').forEach(dd => {
     const t = dd.querySelector('.dd-t'), p = dd.querySelector('.dd-p');
