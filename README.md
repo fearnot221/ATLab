@@ -1,9 +1,9 @@
-# ATLab 2026 招募
+# ATLab
 
-國立中央大學 ATLab（Aeronautic Transportation Lab）2026 招募臨時官網。
+ATLab 網站。
 
 - 網站：https://atlabrocket.org
-- 純靜態頁面，部署於 GitHub Pages
+- 純靜態頁面，部署於 GitHub Pages（`main` 分支根目錄）
 
 ## 本機預覽
 
