@@ -307,10 +307,28 @@ a{color:inherit}
   .ways li:nth-last-child(2){border-bottom:1px solid var(--line)}
 }
 .note{color:var(--mute);margin-top:20px;font-size:15px}
-.thanks{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,80px);margin-top:clamp(70px,9vw,120px);padding-top:28px;border-top:1px solid var(--line-2);align-items:baseline}
-.thanks b{display:block;font-size:clamp(24px,2.6vw,34px);font-weight:900;line-height:1.3;margin-top:8px}
-.thanks p{color:var(--mute)}
-@media (max-width:860px){.thanks{grid-template-columns:1fr}}
+/* sponsor thank-you carousel */
+.thx{margin-top:clamp(70px,9vw,120px);border-top:1px solid var(--line-2);padding-top:22px}
+.thx .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.thx .ctl{display:flex;align-items:center;gap:14px}
+.thx .ctr{font-variant-numeric:tabular-nums;color:var(--white)}
+.thx .ctr span{color:var(--dim)}
+.thx button{width:44px;height:44px;border:1px solid var(--line-2);background:transparent;color:var(--white);font:500 18px/1 var(--latin);cursor:pointer;display:grid;place-items:center;transition:background .25s,border-color .25s,color .25s}
+.thx button:hover{background:var(--white);color:var(--navy);border-color:var(--white)}
+.thx.solo .ctl,.thx.solo .tick{display:none}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;margin-top:clamp(26px,3vw,40px);-webkit-overflow-scrolling:touch}
+.slides::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(20px,5vw,80px);align-items:end;min-width:0}
+.slide .who .mono{display:block}
+.slide b{display:block;font-size:clamp(30px,4.2vw,60px);font-weight:900;line-height:1.15;margin-top:12px;text-wrap:balance}
+.slide b small{display:block;font-family:var(--latin);font-weight:600;font-size:.36em;letter-spacing:.02em;color:var(--mute);margin-top:8px}
+.slide .what{border-left:1px solid var(--line-2);padding-left:clamp(16px,2vw,28px)}
+.slide .what .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--hot)}
+.slide .what p{color:var(--mute);margin-top:6px;max-width:30em}
+.slide .what p strong{color:var(--white);font-weight:500}
+.tick{height:1px;background:var(--line);margin-top:clamp(28px,3.4vw,44px);position:relative;overflow:hidden}
+.tick i{position:absolute;inset:0;background:var(--white);transform-origin:left;transform:scaleX(0)}
+@media (max-width:760px){.slide{grid-template-columns:1fr;align-items:start}}
 
 /* ---------- CLOSING ---------- */
 .closing{border-top:1px solid var(--line);padding:clamp(100px,13vw,180px) 0 clamp(40px,5vw,60px)}
@@ -603,9 +621,23 @@ a{color:inherit}
         <li class="rv"><span class="mono up">Facilities</span><h3>場地與設備</h3><p>測試場地、量測儀器、測試設備與運輸。</p></li>
       </ul>
       <p class="note rv">贊助形式與回饋方式，都可以依照貴單位的需求一起討論。</p>
-      <div class="thanks rv">
-        <div><span class="mono up">Thank you · AT1ax</span><b>Crescent 新月應用材料</b></div>
-        <p>感謝新月應用材料贊助 AT1ax 的鈦螺絲零件，讓箭體在追求輕量化的同時兼顧結構強度。</p>
+      <div class="thx rv" id="thx" aria-roledescription="carousel" aria-label="贊助夥伴致謝">
+        <div class="top">
+          <span class="mono up">Thank you · 曾經支持我們的夥伴</span>
+          <div class="ctl">
+            <span class="mono ctr" id="thxCtr" aria-live="polite">01 <span>/ 01</span></span>
+            <button type="button" id="thxPrev" aria-label="上一個贊助夥伴">←</button>
+            <button type="button" id="thxNext" aria-label="下一個贊助夥伴">→</button>
+          </div>
+        </div>
+        <div class="slides" id="thxTrack" tabindex="0">
+          <!-- 新增贊助夥伴：複製一個 <article class="slide"> 並修改內容即可 -->
+          <article class="slide" aria-roledescription="slide">
+            <div class="who"><span class="mono up">AT1ax · 2025</span><b>新月應用材料<small>Crescent</small></b></div>
+            <div class="what"><div class="k">贊助內容 · 鈦螺絲零件</div><p>新月應用材料長期代理與經銷各類接頭、管件。他們贊助的鈦螺絲，讓 AT1ax 在追求<strong>輕量化</strong>的同時兼顧<strong>結構強度</strong>。</p></div>
+          </article>
+        </div>
+        <div class="tick" aria-hidden="true"><i id="thxTick"></i></div>
       </div>
     </div>
   </section>
@@ -656,6 +688,34 @@ a{color:inherit}
     el.addEventListener('focus', () => setK(el.dataset.k));
     el.addEventListener('blur', () => setK(null));
   });
+
+  /* sponsor carousel: native scroll-snap, buttons, autoplay that pauses on interaction */
+  const thx = $('#thx'), track = $('#thxTrack'), slides = $$('.slide', track), ctr = $('#thxCtr'), tick = $('#thxTick');
+  const N = slides.length, pad = n => String(n).padStart(2, '0');
+  if (N < 2) thx.classList.add('solo');
+  else {
+    let cur = 0, t0 = performance.now(), paused = false, raf;
+    const DUR = 5200;
+    const show = () => { ctr.innerHTML = pad(cur + 1) + ' <span>/ ' + pad(N) + '</span>'; };
+    const go = k => { cur = (k + N) % N; track.scrollTo({ left: cur * track.clientWidth, behavior: reduce || document.hidden ? 'auto' : 'smooth' }); t0 = performance.now(); show(); };
+    $('#thxPrev').addEventListener('click', () => go(cur - 1));
+    $('#thxNext').addEventListener('click', () => go(cur + 1));
+    track.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); } });
+    let st; track.addEventListener('scroll', () => { clearTimeout(st); st = setTimeout(() => { const k = Math.round(track.scrollLeft / track.clientWidth); if (k !== cur) { cur = k; t0 = performance.now(); show(); } }, 120); }, { passive: true });
+    const hold = v => () => { paused = v; if (!v) t0 = performance.now() - (parseFloat(tick.dataset.p || 0) * DUR); };
+    ['pointerenter', 'focusin', 'touchstart'].forEach(ev => thx.addEventListener(ev, hold(true), { passive: true }));
+    ['pointerleave', 'focusout'].forEach(ev => thx.addEventListener(ev, hold(false)));
+    const loop = now => {
+      if (!paused && !document.hidden) {
+        const p = Math.min((now - t0) / DUR, 1);
+        tick.dataset.p = p; tick.style.transform = 'scaleX(' + p + ')';
+        if (p >= 1) go(cur + 1);
+      }
+      raf = requestAnimationFrame(loop);
+    };
+    show();
+    if (!reduce) raf = requestAnimationFrame(loop);
+  }
 
   if (!hasGsap || reduce) { root.classList.add(hasGsap ? 'rm' : 'nogsap'); return; }
   root.classList.add('gs');
