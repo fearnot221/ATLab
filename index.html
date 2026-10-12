@@ -306,6 +306,15 @@ button{font:inherit;color:inherit}
 .join .intro{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);margin-top:clamp(36px,5vw,64px);align-items:start}
 .join .intro p{color:var(--mute);font-size:clamp(16px,1.35vw,18px)}
 @media (max-width:860px){.join .intro{grid-template-columns:1fr}.join h2{font-size:min(11.4vw,72px)}}
+.teams{margin-top:clamp(56px,7vw,96px)}
+.teams ul{list-style:none;border-top:1px solid var(--line-2);margin-top:12px}
+.teams a{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px clamp(16px,3vw,40px);align-items:baseline;padding:clamp(16px,2vw,24px) 0;border-bottom:1px solid var(--line);text-decoration:none;transition:color .25s}
+.teams b{font-weight:900;font-size:clamp(34px,5.4vw,76px);line-height:1.08;transition:transform .45s var(--ease)}
+.teams .en{font-family:var(--latin);font-style:italic;font-weight:600;font-size:.36em;color:var(--mute);margin-left:.6em;transition:color .25s}
+.teams .d{font-size:14px;color:var(--mute);white-space:nowrap}
+.teams .ar{font-family:var(--latin);font-size:clamp(24px,3vw,40px);line-height:1}
+@media (hover:hover){.teams a:hover{color:var(--hot)}.teams a:hover b{transform:translateX(14px)}.teams a:hover .en,.teams a:hover .d{color:var(--white)}}
+@media (max-width:640px){.teams a{grid-template-columns:minmax(0,1fr) auto}.teams .d{grid-column:1;grid-row:2}.teams .ar{grid-row:1 / span 2;align-self:center}.teams .en{display:block;margin:6px 0 0}}
 .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,72px);margin-top:clamp(56px,7vw,96px)}
 .fields ul{list-style:none;border-top:1px solid var(--line-2);margin-top:12px}
 .fields li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0 15px;border-bottom:1px solid var(--line);font-size:clamp(22px,2.6vw,34px);font-weight:700;line-height:1.2;transition:padding .45s var(--ease),color .25s}
@@ -396,6 +405,7 @@ try{ if(!sessionStorage.getItem('atl-boot') && !matchMedia('(prefers-reduced-mot
       <a href="#flight">AT1ax</a>
       <a href="#parts">子系統</a>
       <a href="#at2">AT2 · 液態</a>
+      <a href="#teams">技術組</a>
       <a href="#join">招募對象</a>
       <a href="sponsor/">贊助</a>
       <a class="btn btn-s" href="https://docs.google.com/forms/d/e/1FAIpQLSdKvt0GPgIo4ieLZmiMwHoQjOxk1vnX5lS7LFWYbA3RFBrvxA/viewform" target="_blank" rel="noopener">報名表單 <span class="ar">↗</span></a>
@@ -583,6 +593,15 @@ try{ if(!sessionStorage.getItem('atl-boot') && !matchMedia('(prefers-reduced-mot
         <p class="rv">無論你來自機械、電機、資工、物理、化學，或對財務、行政、影像、設計、公關與專案管理有興趣，ATLab 都有需要你的地方。</p>
         <figure class="rv"><div class="pf sh"><div class="pi"><img src="img/member.jpg" width="840" height="515" loading="lazy" alt="戴安全帽的團隊成員正在組裝橘白色火箭的尾翼"></div></div>
           <figcaption class="cap"><span class="t">組裝尾翼</span><span class="mono">2026 招募</span></figcaption></figure>
+      </div>
+
+      <div class="teams" id="teams">
+        <div class="mono up rv">技術組 · Technical teams</div>
+        <ul class="rv">
+          <li><a href="teams/avionics/" data-img="img/avionics-bay.jpg"><b>航電組<span class="en">Avionics</span></b><span class="d">飛行電腦 · 遙測 · 飛行軟體</span><span class="ar">→</span></a></li>
+          <li><a href="teams/structure/" data-img="img/structure.jpg"><b>結構組<span class="en">Structure</span></b><span class="d">箭體 · 回收 · 加工</span><span class="ar">→</span></a></li>
+          <li><a href="teams/propulsion/" data-img="img/hotfire.jpg"><b>推進組<span class="en">Propulsion</span></b><span class="d">液態引擎 · 地面測試</span><span class="ar">→</span></a></li>
+        </ul>
       </div>
 
       <div class="fields">
@@ -822,7 +841,7 @@ try{ if(!sessionStorage.getItem('atl-boot') && !matchMedia('(prefers-reduced-mot
     const peek = $('#peek'), pimg = $('#peekImg');
     gsap.set(peek, { scale: .8 });
     const qx = gsap.quickTo(peek, 'x', { duration: .55, ease: 'power3' }), qy = gsap.quickTo(peek, 'y', { duration: .55, ease: 'power3' });
-    $$('.fields li').forEach(li => {
+    $$('.fields li, .teams a').forEach(li => {
       li.addEventListener('pointerenter', e => {
         if (!peek.classList.contains('on')) { gsap.set(peek, { x: e.clientX + 200, y: e.clientY }); }
         pimg.src = li.dataset.img; peek.classList.add('on');
