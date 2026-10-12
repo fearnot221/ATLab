@@ -1,4 +1,21 @@
 (() => {
+  /* 技術組 dropdown: click to open, closes on outside click, Esc or leaving it */
+  document.querySelectorAll('.dd').forEach(dd => {
+    const t = dd.querySelector('.dd-t'), p = dd.querySelector('.dd-p');
+    const set = o => { t.setAttribute('aria-expanded', o); p.hidden = !o; };
+    t.addEventListener('click', () => set(p.hidden));
+    document.addEventListener('click', e => { if (!dd.contains(e.target)) set(false); });
+    dd.addEventListener('keydown', e => { if (e.key === 'Escape' && !p.hidden) { set(false); t.focus(); } });
+    dd.addEventListener('focusout', e => { if (e.relatedTarget && !dd.contains(e.relatedTarget)) set(false); });
+  });
+  /* 技術組 accordion inside the mobile menu */
+  document.querySelectorAll('.mexp').forEach(b => {
+    const sub = document.getElementById(b.getAttribute('aria-controls'));
+    b.addEventListener('click', () => { const o = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', o); sub.hidden = !o; });
+  });
+})();
+
+(() => {
   /* mobile menu: full-screen list under the header */
   const b = document.getElementById('mbtn'), m = document.getElementById('mnav');
   if (!b || !m) return;
