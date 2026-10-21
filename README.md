@@ -1,6 +1,6 @@
-# ATLab 2026 招募
+# ATLab
 
-國立中央大學 ATLab（Aeronautic Transportation Lab）招募官網。
+國立中央大學 ATLab（Aeronautic Transportation Lab）網站。
 
 - 網站：https://atlabrocket.org
 - 純靜態網站，保留 GitHub Pages 從根目錄部署的方式。
@@ -41,7 +41,7 @@ JSON 是純文字資料，不接受 HTML。引號以 `\"` 跳脫、換行以 `\n
 }
 ```
 
-其他清單：`site.navigation`、`flight.phases`、`flight.specs`、`at2.statuses`、`at2.specs`、`at2.roadmap`、`join.fields`（每組有 `roles`）、`join.steps`。
+其他清單：`site.navigation`、`site.navigation_after`、`site.teams`、`flight.phases`、`flight.specs`、`at2.statuses`、`at2.specs`、`at2.roadmap`、`join.fields`（每組有 `roles`）、`join.steps`。
 
 - `site.apply_url` 與 `site.instagram_url` 各維護一次，所有對應按鈕共用。
 - `flight.peak_altitude` 使用數字（例如 `2713`），高度顯示、圖表頂端刻度、無障礙說明與動畫共用；文案中的 `{peak}` 會換成帶千分位的高度。其他歷史敘述／SEO 文案是獨立文字，需要一併確認。
@@ -60,6 +60,7 @@ templates/*.html      各區塊的 HTML 結構
 templates/items/      清單項目的共用模板
 assets/css/site.css   樣式與響應式排版
 assets/js/boot.js     開場初始化
+assets/js/navigation.js  主導覽、手機選單與換頁捲動
 assets/js/site.js     既有 GSAP 動畫與互動
 scripts/build.py      靜態頁面產生與資料／路徑檢查
 tests/test_build.py   產生流程的回歸測試
@@ -77,6 +78,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/build.py --check
 node --check assets/js/boot.js
 node --check assets/js/site.js
+node --check assets/js/navigation.js
 python3 -m http.server 4317
 ```
 
@@ -85,3 +87,5 @@ python3 -m http.server 4317
 建置會檢查必要模板欄位、圖片／本機資源路徑、導航錨點、URL 協定和飛行數據；失敗時不會覆寫原有首頁。`--check` 也會確認提交的首頁與 JSON、模板一致，GitHub Actions 在推送或 PR 時執行相同檢查。
 
 GitHub Pages 沿用原有部署設定。它不會替你執行 Python；只修改 JSON 而沒有重新產生並提交首頁，線上內容不會更新。
+
+遠端既有的 `sponsor/` 與 `teams/` 介紹頁及其資源保留原樣；本次 JSON 產生流程涵蓋首頁，主導覽的技術組資料集中在 `data/site.json` 的 `teams`。

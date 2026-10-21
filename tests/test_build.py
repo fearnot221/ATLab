@@ -16,7 +16,7 @@ class BuildTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for directory in ('data', 'templates', 'assets', 'img'):
+        for directory in ('data', 'templates', 'assets', 'img', 'teams', 'sponsor'):
             shutil.copytree(ROOT / directory, self.root / directory)
 
     def edit(self, name, change):
@@ -36,13 +36,20 @@ class BuildTests(unittest.TestCase):
         self.edit('flight', lambda data: data.update(peak_altitude=3200))
         page = builder.build(self.root)
         self.assertIn('&lt;新系統&gt; &amp; 測試', page)
-        self.assertEqual(page.count('https://example.com/form?a=1&amp;b=2'), 3)
+        self.assertEqual(page.count('https://example.com/form?a=1&amp;b=2'), 4)
         self.assertIn('data-peak="3200"', page)
         self.assertIn('最高高度 3,200 公尺', page)
         self.assertIn('遠地點 3,200 m', page)
         self.assertNotIn('2,713', page.replace('AT1ax 飛抵 2,713 公尺', ''))
         self.edit('parts', lambda data: data.update(systems=[]))
         self.assertNotIn('<article class="panel">', builder.build(self.root))
+
+    def test_upstream_navigation_and_pages_are_preserved(self):
+        self.edit('site', lambda d: d['teams'][0].update(title='航電測試組'))
+        page = builder.build(self.root)
+        self.assertEqual(page.count('航電測試組'), 3)
+        for marker in ('id="mbtn"', 'id="mnav"', 'id="ddTeams"', 'id="mTeams"', 'href="sponsor/"', 'assets/js/navigation.js'):
+            self.assertIn(marker, page)
 
     def test_invalid_data_fails_before_output_is_written(self):
         cases = [

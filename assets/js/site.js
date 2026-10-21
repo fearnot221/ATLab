@@ -171,7 +171,7 @@
     const peek = $('#peek'), pimg = $('#peekImg');
     gsap.set(peek, { scale: .8 });
     const qx = gsap.quickTo(peek, 'x', { duration: .55, ease: 'power3' }), qy = gsap.quickTo(peek, 'y', { duration: .55, ease: 'power3' });
-    $$('.fields li').forEach(li => {
+    $$('.fields li, .teams a').forEach(li => {
       li.addEventListener('pointerenter', e => {
         if (!peek.classList.contains('on')) { gsap.set(peek, { x: e.clientX + 200, y: e.clientY }); }
         pimg.src = li.dataset.img; peek.classList.add('on');

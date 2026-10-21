@@ -2,13 +2,13 @@
   "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLSdKvt0GPgIo4ieLZmiMwHoQjOxk1vnX5lS7LFWYbA3RFBrvxA/viewform",
   "instagram_url": "https://www.instagram.com/atlab_rocket",
   "name": "ATLab",
-  "page_title": "ATLab 2026 招募",
+  "page_title": "ATLab",
   "boot_label": "ATLab · 2026 Recruitment · Ignition sequence",
   "apply_label": "報名表單",
   "hud_initial": "00 — Launch pad",
   "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
   "description": "ATLab 中央火箭團隊 2026 招募啟動。AT1ax 飛抵 2,713 公尺，AT2 液態推進 Hot Fire 成功。下一枚升空的火箭，等你一起完成。",
-  "og_title": "ATLab 2026 招募啟動｜Recruitment launched",
+  "og_title": "ATLab｜Aeronautic Transportation Lab",
   "og_description": "你給我一個夢想，我們一起把它送上天空。國立中央大學 ATLab 火箭團隊 2026 招募中。",
   "og_image": "img/launch-sea.jpg",
   "theme_color": "#12213e",
@@ -27,10 +27,6 @@
     {
       "href": "#at2",
       "label": "AT2 · 液態"
-    },
-    {
-      "href": "#join",
-      "label": "招募對象"
     }
   ],
   "boot_sequence": [
@@ -41,5 +37,58 @@
   ],
   "favicon": "img/favicon.png",
   "apple_touch_icon": "img/apple-touch-icon.png",
-  "preview_image": "img/structure.jpg"
+  "preview_image": "img/structure.jpg",
+  "facebook_url": "https://www.facebook.com/profile.php?id=61557431444165",
+  "teams": [
+    {
+      "href": "teams/avionics/",
+      "image": "img/avionics-bay.jpg",
+      "title": "航電組",
+      "english": "Avionics",
+      "description": "飛行電腦 · 遙測 · 飛行軟體"
+    },
+    {
+      "href": "teams/structure/",
+      "image": "img/structure.jpg",
+      "title": "結構組",
+      "english": "Structure",
+      "description": "箭體 · 回收 · 加工"
+    },
+    {
+      "href": "teams/propulsion/",
+      "image": "img/hotfire.jpg",
+      "title": "推進組",
+      "english": "Propulsion",
+      "description": "液態引擎 · 地面測試"
+    }
+  ],
+  "navigation_after": [
+    {
+      "href": "#join",
+      "label": "招募對象"
+    },
+    {
+      "href": "sponsor/",
+      "label": "贊助"
+    }
+  ],
+  "menu_open_label": "開啟選單",
+  "menu_close_label": "關閉選單",
+  "teams_label": "技術組",
+  "teams_overview": "技術組總覽",
+  "nav_flight_long": "AT1ax 飛行紀錄",
+  "nav_flight_en": "Flight",
+  "nav_parts_long": "拆開 AT1ax",
+  "nav_parts_en": "Subsystems",
+  "nav_at2_long": "AT2 液態火箭",
+  "nav_at2_en": "Liquid",
+  "teams_en": "Teams",
+  "teams_overview_en": "All teams",
+  "nav_join": "招募對象",
+  "nav_join_en": "Crew",
+  "nav_sponsor_long": "贊助企劃",
+  "nav_sponsor_en": "Sponsor",
+  "menu_apply_label": "填寫招募表單 ↗",
+  "instagram_label": "Instagram",
+  "facebook_label": "Facebook"
 }

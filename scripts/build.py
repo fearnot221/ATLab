@@ -53,6 +53,8 @@ class PageCheck(HTMLParser):
                     raise ValueError(f'Unsupported URL: {value}')
             elif url.path:
                 path = (self.root / unquote(url.path)).resolve()
+                if path.is_dir():
+                    path = path / 'index.html'
                 if not path.is_relative_to(self.root.resolve()) or not path.is_file():
                     raise ValueError(f'Missing or invalid local file: {value}')
             elif url.fragment:
@@ -72,6 +74,8 @@ def build(root=ROOT):
                             parse_constant=reject_constant)
             for name in ('site', *SECTIONS)}
     site, flight = data['site'], data['flight']
+    teams = site.pop('teams')
+    site['team_dropdown'] = site['team_mobile'] = data['join']['teams'] = teams
     steps = site.pop('boot_sequence')
     if not isinstance(steps, list) or len(steps) != 4 or not all(isinstance(s, str) and s for s in steps):
         raise ValueError('site.boot_sequence must contain four nonempty labels')
