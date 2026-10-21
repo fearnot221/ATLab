@@ -5,11 +5,11 @@
   "headline_1": "你給我一個夢想，",
   "headline_2": "我們一起把它",
   "headline_3": "送上天空。",
-  "turbine_image": "img/d-turbine.png",
-  "target_image": "img/d-target.png",
-  "injector_image": "img/d-injector.png",
-  "rocket_image": "img/d-rocket.png",
-  "image": "img/launch-sea.jpg",
+  "turbine_image": "assets/images/d-turbine.png",
+  "target_image": "assets/images/d-target.png",
+  "injector_image": "assets/images/d-injector.png",
+  "rocket_image": "assets/images/d-rocket.png",
+  "image": "assets/images/launch-sea.jpg",
   "image_alt": "AT1ax 從旭海發射場升空，背景是山與海",
   "hud": "00 — Launch pad"
 }

@@ -41,3 +41,13 @@
   addEventListener('keydown', e => { if (e.key === 'Escape' && !m.hidden) { set(false); b.focus(); } });
   matchMedia('(min-width: 1001px)').addEventListener('change', e => e.matches && set(false));
 })();
+
+(() => {
+  /* sub-nav: underline the section being read */
+  const links = [...document.querySelectorAll('.subnav a[href^="#"]')];
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-40% 0px -55% 0px' });
+  links.forEach(a => { const t = document.querySelector(a.getAttribute('href')); t && io.observe(t); });
+})();

@@ -10,7 +10,7 @@
   "description": "ATLab 中央火箭團隊 2026 招募啟動。AT1ax 飛抵 2,713 公尺，AT2 液態推進 Hot Fire 成功。下一枚升空的火箭，等你一起完成。",
   "og_title": "ATLab｜Aeronautic Transportation Lab",
   "og_description": "你給我一個夢想，我們一起把它送上天空。國立中央大學 ATLab 火箭團隊 2026 招募中。",
-  "og_image": "img/launch-sea.jpg",
+  "og_image": "assets/images/launch-sea.jpg",
   "theme_color": "#12213e",
   "home_label": "ATLab 回到頂部",
   "full_name": "Aeronautic Transportation Lab",
@@ -35,28 +35,28 @@
     "T−01",
     "IGNITION"
   ],
-  "favicon": "img/favicon.png",
-  "apple_touch_icon": "img/apple-touch-icon.png",
-  "preview_image": "img/structure.jpg",
+  "favicon": "assets/images/favicon.png",
+  "apple_touch_icon": "assets/images/apple-touch-icon.png",
+  "preview_image": "assets/images/structure.jpg",
   "facebook_url": "https://www.facebook.com/profile.php?id=61557431444165",
   "teams": [
     {
       "href": "teams/avionics/",
-      "image": "img/avionics-bay.jpg",
+      "image": "assets/images/avionics-bay.jpg",
       "title": "航電組",
       "english": "Avionics",
       "description": "飛行電腦 · 遙測 · 飛行軟體"
     },
     {
       "href": "teams/structure/",
-      "image": "img/structure.jpg",
+      "image": "assets/images/structure.jpg",
       "title": "結構組",
       "english": "Structure",
       "description": "箭體 · 回收 · 加工"
     },
     {
       "href": "teams/propulsion/",
-      "image": "img/hotfire.jpg",
+      "image": "assets/images/hotfire.jpg",
       "title": "推進組",
       "english": "Propulsion",
       "description": "液態引擎 · 地面測試"

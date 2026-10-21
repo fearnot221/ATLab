@@ -4,27 +4,27 @@
       "title": "Engineering · 工程",
       "roles": [
         {
-          "image": "img/structure.jpg",
+          "image": "assets/images/structure.jpg",
           "title": "機械",
           "detail": "結構 · 推進"
         },
         {
-          "image": "img/avionics-bay.jpg",
+          "image": "assets/images/avionics-bay.jpg",
           "title": "電機",
           "detail": "航電 · 電源"
         },
         {
-          "image": "img/hotfire.jpg",
+          "image": "assets/images/hotfire.jpg",
           "title": "資工",
           "detail": "飛行軟體 · 地面站"
         },
         {
-          "image": "img/launch-sea.jpg",
+          "image": "assets/images/launch-sea.jpg",
           "title": "物理",
           "detail": "飛行動力 · 量測"
         },
         {
-          "image": "img/propulsion.jpg",
+          "image": "assets/images/propulsion.jpg",
           "title": "化學",
           "detail": "推進劑 · 材料"
         }
@@ -34,27 +34,27 @@
       "title": "Operations · 營運",
       "roles": [
         {
-          "image": "img/signed.jpg",
+          "image": "assets/images/signed.jpg",
           "title": "財務",
           "detail": "預算 · 贊助"
         },
         {
-          "image": "img/at2-build.jpg",
+          "image": "assets/images/at2-build.jpg",
           "title": "行政",
           "detail": "場地 · 文件"
         },
         {
-          "image": "img/launch-sea.jpg",
+          "image": "assets/images/launch-sea.jpg",
           "title": "影像",
           "detail": "攝影 · 剪輯"
         },
         {
-          "image": "img/member.jpg",
+          "image": "assets/images/member.jpg",
           "title": "設計",
           "detail": "視覺 · 品牌"
         },
         {
-          "image": "img/team.jpg",
+          "image": "assets/images/team.jpg",
           "title": "公關與專案管理",
           "detail": "對外 · 時程"
         }
@@ -101,7 +101,7 @@
   "steps_title": "在這裡，你不只是旁觀者",
   "steps_note": "親眼看著自己的成果，從圖紙與電路板，變成劃破天際的飛行器。",
   "hud": "05 — Crew",
-  "image": "img/member.jpg",
+  "image": "assets/images/member.jpg",
   "image_alt": "戴安全帽的團隊成員正在組裝橘白色火箭的尾翼",
   "teams_title": "技術組 · Technical teams"
 }
