@@ -1,0 +1,27 @@
+  <!-- JOIN -->
+  <section class="join" id="join" data-hud="${join_hud}">
+    <div class="wrap">
+      <div class="lab rv"><span class="n">${join_number}</span><span class="ln"></span><b>${join_title}</b><span class="mono up">${join_subtitle}</span></div>
+      <h2 class="split"><span class="l"><span>${join_headline_1}</span></span><span class="l"><span>${join_headline_2}</span></span></h2>
+      <div class="intro">
+        <p class="rv">${join_description}</p>
+        <figure class="rv"><div class="pf sh"><div class="pi"><img src="${join_image}" width="840" height="515" loading="lazy" alt="${join_image_alt}"></div></div>
+          <figcaption class="cap"><span class="t">${join_photo_caption}</span><span class="mono">${join_photo_meta}</span></figcaption></figure>
+      </div>
+
+      <div class="fields">
+        ${join_fields}
+      </div>
+
+      <p class="req rv"><span class="nw">${join_requirement_intro}<u>${join_requirement}</u>，</span><br><span class="nw">${join_requirement_end}</span></p>
+
+      <div class="count" id="count">
+        <div class="mono up rv">${join_steps_title}</div>
+        <ol>
+          ${join_steps}
+        </ol>
+        <p class="note rv">${join_steps_note}</p>
+      </div>
+    </div>
+  </section>
+

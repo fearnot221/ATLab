@@ -1,0 +1,106 @@
+{
+  "fields": [
+    {
+      "title": "Engineering · 工程",
+      "roles": [
+        {
+          "image": "img/structure.jpg",
+          "title": "機械",
+          "detail": "結構 · 推進"
+        },
+        {
+          "image": "img/avionics-bay.jpg",
+          "title": "電機",
+          "detail": "航電 · 電源"
+        },
+        {
+          "image": "img/hotfire.jpg",
+          "title": "資工",
+          "detail": "飛行軟體 · 地面站"
+        },
+        {
+          "image": "img/launch-sea.jpg",
+          "title": "物理",
+          "detail": "飛行動力 · 量測"
+        },
+        {
+          "image": "img/propulsion.jpg",
+          "title": "化學",
+          "detail": "推進劑 · 材料"
+        }
+      ]
+    },
+    {
+      "title": "Operations · 營運",
+      "roles": [
+        {
+          "image": "img/signed.jpg",
+          "title": "財務",
+          "detail": "預算 · 贊助"
+        },
+        {
+          "image": "img/at2-build.jpg",
+          "title": "行政",
+          "detail": "場地 · 文件"
+        },
+        {
+          "image": "img/launch-sea.jpg",
+          "title": "影像",
+          "detail": "攝影 · 剪輯"
+        },
+        {
+          "image": "img/member.jpg",
+          "title": "設計",
+          "detail": "視覺 · 品牌"
+        },
+        {
+          "image": "img/team.jpg",
+          "title": "公關與專案管理",
+          "detail": "對外 · 時程"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "countdown": "T−5",
+      "title": "設計審查"
+    },
+    {
+      "countdown": "T−4",
+      "title": "撰寫程式"
+    },
+    {
+      "countdown": "T−3",
+      "title": "製作零件"
+    },
+    {
+      "countdown": "T−2",
+      "title": "整合系統"
+    },
+    {
+      "countdown": "T−1",
+      "title": "執行測試"
+    },
+    {
+      "countdown": "T−0",
+      "title": "升空"
+    }
+  ],
+  "number": "06",
+  "title": "我們在找這樣的你",
+  "subtitle": "Crew wanted",
+  "headline_1": "你不需要",
+  "headline_2": "已經會造火箭。",
+  "description": "無論你來自機械、電機、資工、物理、化學，或對財務、行政、影像、設計、公關與專案管理有興趣，ATLab 都有需要你的地方。",
+  "photo_caption": "組裝尾翼",
+  "photo_meta": "2026 招募",
+  "requirement_intro": "但你必須",
+  "requirement": "願意學習、動手、承擔責任",
+  "requirement_end": "並和團隊一起把事情做到能夠真正飛行。",
+  "steps_title": "在這裡，你不只是旁觀者",
+  "steps_note": "親眼看著自己的成果，從圖紙與電路板，變成劃破天際的飛行器。",
+  "hud": "05 — Crew",
+  "image": "img/member.jpg",
+  "image_alt": "戴安全帽的團隊成員正在組裝橘白色火箭的尾翼"
+}

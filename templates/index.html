@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="${site_viewport}">
+<title>${site_page_title}</title>
+<meta name="description" content="${site_description}">
+<meta property="og:title" content="${site_og_title}">
+<meta property="og:description" content="${site_og_description}">
+<meta property="og:image" content="${site_og_image}">
+<meta name="theme-color" content="${site_theme_color}">
+<link rel="icon" type="image/png" href="${site_favicon}">
+<link rel="apple-touch-icon" href="${site_apple_touch_icon}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,500;1,800&family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mk" viewBox="0 0 310 300"><path d="M14.6 13.4L251.3 263.1A12.5 12.5 0 0 0 268.9 245.3L15.4 12.6ZM89.6 31.4L271.3 227.1A12.5 12.5 0 0 0 288.9 209.3L90.4 30.6ZM161.6 55.4L282.3 183.2A9.0 9.0 0 0 0 294.8 170.3L162.4 54.6ZM233.6 87.4L276.9 134.2A5.0 5.0 0 0 0 283.8 126.9L234.4 86.6ZM32.6 90.4L211.3 285.0A12.5 12.5 0 0 0 229.0 267.3L33.4 89.6ZM50.6 154.4L171.3 284.1A9.0 9.0 0 0 0 183.9 271.3L51.4 153.6ZM85.6 224.4L128.9 272.1A5.0 5.0 0 0 0 135.9 264.9L86.4 223.6Z"/></symbol>
+</svg>
+
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="t" id="bootT" data-steps="${site_boot_steps}">${site_boot_initial}</div>
+  <div class="mono up">${site_boot_label}</div>
+  <div class="bar" id="bootBar"></div>
+</div>
+<div class="sheet" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<header class="hd" id="hd">
+  <div class="in">
+    <a class="brand" href="#top" aria-label="${site_home_label}"><svg class="mark"><use href="#mk"/></svg><b>${site_name}</b></a>
+    <nav>
+      ${site_navigation}
+      <a class="btn btn-s" href="${site_apply_url}" target="_blank" rel="noopener">${site_apply_label} <span class="ar">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="hud" aria-hidden="true"><span class="mono up" id="hudT">${site_hud_initial}</span><span class="bar"><i id="hudBar"></i></span></div>
+
+<main id="top">
+${sections}
+</main>
+
+<div class="peek" id="peek" aria-hidden="true"><div class="pf"><div class="pi"><img id="peekImg" src="${site_preview_image}" alt=""></div></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

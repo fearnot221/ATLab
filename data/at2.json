@@ -1,0 +1,98 @@
+{
+  "statuses": [
+    {
+      "state": "DONE",
+      "title": "液態推進系統 Hot Fire 測試成功",
+      "detail": "點火程序 · 推進劑供應 · 燃燒穩定",
+      "status_class": "ok"
+    },
+    {
+      "state": "NEXT",
+      "title": "AT2 正式發射，旭海",
+      "detail": "2027 年 7 月中旬",
+      "status_class": "wait"
+    }
+  ],
+  "specs": [
+    {
+      "label": "箭體總重",
+      "value": "38 kg"
+    },
+    {
+      "label": "推進架構",
+      "value": "Pressure-fed"
+    },
+    {
+      "label": "預計總衝",
+      "value": "10,000 Ns"
+    },
+    {
+      "label": "燃燒時間",
+      "value": "3 s"
+    },
+    {
+      "label": "目標高度",
+      "value": "2 km"
+    },
+    {
+      "label": "引擎 · 儲槽",
+      "value": "全自研"
+    }
+  ],
+  "roadmap": [
+    {
+      "year": "2025",
+      "title": "固態火箭 AT1ax",
+      "description": "第一枚自研火箭成功發射，驗證航電、系統規劃與結構強度。",
+      "current_class": ""
+    },
+    {
+      "year": "2026",
+      "title": "液態推進 · FARCX / AT2",
+      "description": "Hot Fire 成功，完成航電、地面測試與系統整合。",
+      "current_class": "now"
+    },
+    {
+      "year": "2027",
+      "title": "AT2 發射 · 跨校任務",
+      "description": "與淡江、清大 STAR 合作，驗證新一代航電、分散式控制與回收。",
+      "current_class": ""
+    },
+    {
+      "year": "2028+",
+      "title": "模組化航電 · 智慧追蹤天線",
+      "description": "高可靠度航電、智慧地面站與主動天線追蹤，持續推進液態引擎。",
+      "current_class": ""
+    }
+  ],
+  "number": "04",
+  "title": "今年，我們走向液態火箭",
+  "headline_1": "從固態跨入液態，",
+  "headline_2": "從驗證走向突破。",
+  "intro_before": "2026 年，ATLab 參與",
+  "mission_name": "FARCX 液態火箭任務",
+  "intro_after": "，投入航電、遙測、地面站、推進測試與系統整合。感測器、閥門、壓力供應、飛行電腦、通訊與安全系統，必須在正確的時間協同運作。每一個接頭、每一行程式、每一項測試，都可能決定任務能否成功。",
+  "rocket_label": "AT2：",
+  "rocket_claim": "台灣第一支",
+  "rocket_title": "液態科研探空火箭。",
+  "safety_title_1": "每一次點火之前，",
+  "safety_title_2": "我們先用自來水跑一遍。",
+  "safety_description": "測試前一定先開行前會議，邀請指導老師與 ARRC 審查每一個環節。測試場地會先模擬整套程序，真正噴射之前，用自來水完整演練一次，把不順的地方寫進 SOP。",
+  "partners": "NYCU 陽明交大 · iSSE 太空系統工程研究所 · ARRC 前瞻火箭研究中心 · TASA 國家太空中心",
+  "roadmap_number": "05",
+  "roadmap_title": "接下來",
+  "roadmap_range": "2025 — 2028+",
+  "hud": "04 — Liquid",
+  "build_image": "img/at2-build.jpg",
+  "hotfire_image": "img/hotfire.jpg",
+  "team_image": "img/team.jpg",
+  "build_alt": "AT2 箭體骨架與管路攤在木板上組裝中",
+  "hotfire_alt": "夜間的 AT2 液態推進測試架",
+  "team_alt": "戴安全帽的團隊成員在旭海發射場前合照",
+  "build_caption": "AT2 組裝中",
+  "hotfire_caption": "AT2 Hot Fire 測試",
+  "team_caption": "ATLab 在旭海",
+  "build_meta": "HTP / Kerosene",
+  "hotfire_meta": "ATLab × ARRC",
+  "team_meta": "AT2 Project"
+}

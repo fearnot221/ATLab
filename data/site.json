@@ -1,0 +1,45 @@
+{
+  "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLSdKvt0GPgIo4ieLZmiMwHoQjOxk1vnX5lS7LFWYbA3RFBrvxA/viewform",
+  "instagram_url": "https://www.instagram.com/atlab_rocket",
+  "name": "ATLab",
+  "page_title": "ATLab 2026 招募",
+  "boot_label": "ATLab · 2026 Recruitment · Ignition sequence",
+  "apply_label": "報名表單",
+  "hud_initial": "00 — Launch pad",
+  "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+  "description": "ATLab 中央火箭團隊 2026 招募啟動。AT1ax 飛抵 2,713 公尺，AT2 液態推進 Hot Fire 成功。下一枚升空的火箭，等你一起完成。",
+  "og_title": "ATLab 2026 招募啟動｜Recruitment launched",
+  "og_description": "你給我一個夢想，我們一起把它送上天空。國立中央大學 ATLab 火箭團隊 2026 招募中。",
+  "og_image": "img/launch-sea.jpg",
+  "theme_color": "#12213e",
+  "home_label": "ATLab 回到頂部",
+  "full_name": "Aeronautic Transportation Lab",
+  "apply_cta": "填寫招募表單",
+  "navigation": [
+    {
+      "href": "#flight",
+      "label": "AT1ax"
+    },
+    {
+      "href": "#parts",
+      "label": "子系統"
+    },
+    {
+      "href": "#at2",
+      "label": "AT2 · 液態"
+    },
+    {
+      "href": "#join",
+      "label": "招募對象"
+    }
+  ],
+  "boot_sequence": [
+    "T−03",
+    "T−02",
+    "T−01",
+    "IGNITION"
+  ],
+  "favicon": "img/favicon.png",
+  "apple_touch_icon": "img/apple-touch-icon.png",
+  "preview_image": "img/structure.jpg"
+}

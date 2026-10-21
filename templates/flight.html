@@ -1,0 +1,30 @@
+  <!-- FLIGHT -->
+  <section class="flight" id="flight" data-hud="${flight_hud}">
+    <div class="fl-stage" id="flStage">
+      <div>
+        <div class="lab"><span class="n">${flight_number}</span><span class="ln"></span><b>${flight_title}</b></div>
+        <div class="mono up">${flight_mission}</div>
+        <div class="alt" id="alt" data-peak="${flight_peak_altitude}" aria-label="${flight_altitude_label}"><span id="altN">${flight_peak_formatted}</span><small>m</small></div>
+        <div class="live mono up"><span>${flight_max_label}</span><span>${flight_now_label} <b id="altNow">0</b> m</span></div>
+        <ul class="phases" id="phases">
+          ${flight_phases}
+        </ul>
+      </div>
+      <svg class="traj" id="traj" viewBox="0 0 600 600" role="img" aria-label="${flight_trajectory_label}">
+        <line class="g" x1="60" y1="60" x2="590" y2="60"/><text class="gl" x="0" y="64">${flight_peak_formatted}</text>
+        <line class="g" x1="60" y1="191" x2="590" y2="191"/><text class="gl" x="0" y="195">${flight_grid_middle}</text>
+        <line class="g" x1="60" y1="376" x2="590" y2="376"/><text class="gl" x="0" y="380">${flight_grid_lower}</text>
+        <line class="gnd" x1="60" y1="560" x2="590" y2="560"/><text class="gl" x="0" y="564">${flight_ground_label}</text>
+        <path class="asc" id="asc" d="M110 560 C 140 330, 250 92, 360 60"/>
+        <path class="dsc" id="dsc" d="M360 60 C 390 60, 420 110, 440 240 S 470 500, 486 560"/>
+        <circle class="ring" id="ring" cx="486" cy="560" r="12"/>
+        <circle class="dot" id="dot" cx="486" cy="560" r="5"/>
+      </svg>
+    </div>
+    <div class="specs">
+      <div class="spec rv">
+        ${flight_specs}
+      </div>
+    </div>
+  </section>
+

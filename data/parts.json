@@ -1,0 +1,42 @@
+{
+  "systems": [
+    {
+      "src": "img/avionics-bay.jpg",
+      "alt": "裝在白色環形支架中的航電電路板與線束",
+      "category": "Avionics",
+      "title": "航電 Flint MK1",
+      "description": "主控邏輯板加任務擴充板。氣壓計、IMU、電壓監控、GPS、點火偵測與長距離通訊，全部自己設計。"
+    },
+    {
+      "src": "img/structure.jpg",
+      "alt": "AT1ax 箭體結構模組與線束攤在桌上",
+      "category": "Structure",
+      "title": "結構與回收",
+      "description": "航電段與回收系統整合成單一模組，維修時整段抽出。活塞式傘桶與導流罩都是自研。"
+    },
+    {
+      "src": "img/propulsion.jpg",
+      "alt": "推進系統地面測試，噴嘴噴出白色煙流",
+      "category": "Propulsion · ATLab × ARRC",
+      "title": "推進",
+      "description": "搭載國家太空中心的 Pioneer-10K 引擎，同時是 2026 台灣盃 3K 組引擎的前導驗證。"
+    },
+    {
+      "src": "img/signed.jpg",
+      "alt": "白色箭體上寫滿團隊成員的簽名",
+      "category": "Integration · NYCU iSSE",
+      "title": "航電也搭上了 SSTT",
+      "description": "與陽明交大太空系統工程研究所合作，模組化航電平台搭載於 SSTT 火箭，執行天線配置與飛行環境驗證。"
+    }
+  ],
+  "number": "03",
+  "title": "拆開 AT1ax",
+  "headline_1": "每一個子系統，",
+  "headline_2": "都是學生做的。",
+  "conclusion_intro": "這些不是",
+  "excluded_model": "模型",
+  "excluded_simulation": "模擬",
+  "excluded_assignment": "課堂作業",
+  "conclusion": "，而是一套真正接受過飛行考驗的工程系統。",
+  "hud": "03 — Subsystems"
+}

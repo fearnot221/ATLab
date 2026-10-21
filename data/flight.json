@@ -1,0 +1,80 @@
+{
+  "phases": [
+    {
+      "title": "點火升空",
+      "detail": "Liftoff",
+      "progress": 0.02,
+      "detail_class": "mono up"
+    },
+    {
+      "title": "最高速度 0.77 Mach",
+      "detail": "267 m/s",
+      "progress": 0.2,
+      "detail_class": "mono"
+    },
+    {
+      "title": "遠地點 {peak} m",
+      "detail": "Apogee",
+      "progress": 0.5,
+      "detail_class": "mono up"
+    },
+    {
+      "title": "開傘",
+      "detail": "Recovery",
+      "progress": 0.66,
+      "detail_class": "mono up"
+    },
+    {
+      "title": "軟著陸",
+      "detail": "Touchdown",
+      "progress": 0.97,
+      "detail_class": "mono up"
+    }
+  ],
+  "specs": [
+    {
+      "label": "箭體全長",
+      "value": "220 cm"
+    },
+    {
+      "label": "推進系統",
+      "value": "Pioneer-10K 固態引擎"
+    },
+    {
+      "label": "總衝量",
+      "value": "10,240 Ns"
+    },
+    {
+      "label": "航電",
+      "value": "Flint MK1（自研）"
+    },
+    {
+      "label": "酬載",
+      "value": "TASA Beacon 追蹤終端"
+    },
+    {
+      "label": "驗證",
+      "value": "GPS 高動態定位"
+    },
+    {
+      "label": "驗證",
+      "value": "點火偵測"
+    },
+    {
+      "label": "驗證",
+      "value": "全系統電壓監控"
+    }
+  ],
+  "number": "02",
+  "title": "我們已經做到",
+  "mission": "AT1ax · 2025.07.27 · 旭海 · 台灣盃火箭競賽",
+  "peak_altitude": 2713,
+  "max_label": "Max altitude",
+  "now_label": "Now",
+  "grid_middle": "2,000",
+  "grid_lower": "1,000",
+  "ground_label": "0 m",
+  "hud": "02 — Flight record",
+  "altitude_label": "最高高度 {peak} 公尺",
+  "trajectory_label": "AT1ax 飛行軌跡示意：上升至 {peak} 公尺後開傘回收"
+}
